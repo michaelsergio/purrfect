@@ -3,6 +3,8 @@ Purrfect
 
 A demo repo for the greatest cat website ever created during a lab on git.
 
+Accompanies https://github.com/michaelsergio/gittalk
+
 # Demo Walkthrough
 
 Click on the link it the talk.
