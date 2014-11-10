@@ -244,3 +244,12 @@ If you dont like the changes made by the HEAD commit try
 
 If you look at the log, you'll see the changes were both made and recorded and
 the repo is in the original state.
+
+
+
+# Other 
+
+You don't have to type your username and password into git everytime you want to
+upload a file to GitHub.
+Use an SSH Key!
+https://help.github.com/articles/generating-ssh-keys/

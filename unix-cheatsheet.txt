@@ -1,0 +1,19 @@
+Command Line Cheatsheet (Linux + OS X)
+=======================================
+    cd ~                   # Go to home directory 
+    cd ..                  # Go up one direction.
+    pwd                    # Print working directory (current directory)
+    ls                     # List files in current directory.
+    ls -a                  # List all files including hidden files.
+    ls -l or ls -la        # List files in a column.
+    mkdir <directory_name> # Creates a new directory.
+    rm -r <directory_name> # Deletes a directory.
+    touch <name>           # Creates an empty file (also update access time).
+    rm <name>              # Deletes file name name.
+    mv <src> <target>      # Rename / Move file.
+    man git                # The git manual. 'q' to quit.'Spacebar' next page.
+    man git-add            # Show the git manual page for the git add command.
+    Ctrl-C                 # Kill current running program.
+    Tab                    # Auto complete directory name
+
+
