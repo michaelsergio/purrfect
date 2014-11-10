@@ -20,6 +20,7 @@ These are all your repositories including the forked copy of my project.
 Find the HTTPS clone URL on the right side of the page. Copy it.
 
 Type git clone and paste the url you have.
+
     git clone https://github.com/yourname/purrfect.git
 
 You now have a local working copy.
@@ -30,16 +31,21 @@ issue.
 The first thing well do is make a feature branch to develop on.
 
 To see all branches
+
     git branch 
+
 Make a branch
+
     git branch better-cat
 
 The star is the branch you're currently working on.
 
 To switch to better cat do
+
     git checkout better-cat
 
 SHORTCUT: To create a branch and switch to it use:
+
           git checkout -b better-cat
 
 If you do git branch again you should see the star on better-cat.
@@ -50,12 +56,14 @@ Change the url in index.html to the correct filename (remember the imgs/).
 Open the index.html file in a browser and confirm you cat image is still there.
 
 Now do:
+
     git status
 
 You should see your file as untracked.
 Read the output, it says the thing you most likely want to do.
 
 To track the file, or to add it to the staging area, we do:
+
     git add imgs/<YOUR_CATFILE_NAME>
 
 Do git status and you'll see it is moved from "Changes not staged for commit"
@@ -65,6 +73,7 @@ to untracked files.
   directory and whats in staging.
 
 Add your html to staging.
+
     git add index.html
 
 If you do a git status now, you'll see both files in changes to be committed.
@@ -72,6 +81,7 @@ If you do a git status now, you'll see both files in changes to be committed.
  something by accident)
 
 Now we commit the changes to our local repository.
+
     git commit 
 
 An editor will open up. Type your commit message here.
@@ -83,6 +93,7 @@ If your using nano press ^X (thats Control X) to exit and save your file.
 If you don't save your file, the commit will not happen.
 
 SHORTCUT: To type a message without an editor do:
+
           git commit -m "YOUR MESSSAGE HERE"
 
 TIP: If you made a mistake do "git commit --amend" to retype the last message.
@@ -95,22 +106,26 @@ If you do "gitk" you'll see your current projects graph.
 You will see better-cat on top of master.
 
 Now that the feature is complete, do a 
+
     git checkout master
 
 If your reload index.html in your browser you'll notice its still in the
 previous state.
 
 Lets merge the changes we made in the better-cat branch.
+
     git merge better-cat
 
 There should be no merge conflicts yet.
 
 If we look at our log we see the changes have been made.
+
     git log  
     (q to quit)
 and of course we can reload our page to see the changes.
 
 See we no longer need our feature branch we can delete it.
+
     git branch -d better-cat
 
 NOTE: If there we're unmerged changes on our branch we would need to use the 
@@ -120,6 +135,7 @@ NOTE: If there we're unmerged changes on our branch we would need to use the
 If we look at "git log", we notice every commit has a SHA1 hash next to it.
 Say we wanted to look difference between the current and the previous commit.
 We could do:
+
      git diff <THE_OLDER_COMMITS_HASH>
      (q to quit)
 
@@ -131,6 +147,7 @@ NOTE: The top commit is referred to as HEAD.
 Now we want to push our changes back to our personal public repo.
 
 To see what servers we know about do:
+
      git remote
 
 By convention, our main upstream repo is called "origin".
@@ -139,7 +156,9 @@ If you do "git remote show origin", you'll see exactly what origin refers to.
 Lets push our local repo back to out public one.
 
 Do:
+
    git push origin master
+
 This means push our current branch to the REMOTE named origin on the 
 BRANCH master.
 NOTICE: In this case, it is a coincidence our local branch is named master.
@@ -171,18 +190,23 @@ off by a few commits. Lets get you up to date.
 
 To do this we need to added the primary repo as a remote we can pull from.
 To do this:
+
     git remote add primary <GIT_URL_FROM_MICHAEL_SERGIO_BRANCH>
 
 If you do git remote, you should see primary on the list.
 
 On your master branch, do:
+
     git pull primary master
 
 A merge conflict should be presented. We need to fix it.
 index.html should be a unmerged path.
 Lets open that in an editor.
 
-We should see the arrows <<<<<<< ====== >>>>>>>
+We should see arrows denoting a merge conflict.
+
+    <<<<<<< ====== >>>>>>>
+
 Here we should correct the conflict.
 Lets keep all three cats. Delete the arrows.
 The file should look correct now.
@@ -206,13 +230,16 @@ Look at git log and determine the hash of the commit before the change you just
 made.
 
 You can go back to an old commit by doing:
+
     git checkout <OLD_COMMIT_HASH>
 
 To go back to the most recent commit do:
+
    git checkout master
 
 
 If you dont like the changes made by the HEAD commit try
+
    git revert HEAD
 
 If you look at the log, you'll see the changes were both made and recorded and
